@@ -20,13 +20,8 @@ namespace MATS.WF
 
         public void CtorTabla()
         {
-            //int Ay = Convert.ToInt32(txtNotas.Text);
             int Ax = Convert.ToInt32(txtAlum.Text);
-
-            //dgv.ColumnCount = Ay + 1;
             dgv.RowCount = Ax;
-
-            //dgv.Columns[0].Name = "Nombre y Apellido";
         }
 
         private void btnConfir_Click(object sender, EventArgs e)
@@ -108,10 +103,8 @@ namespace MATS.WF
                         mayor = aux[contador];
                     }
                 }
-
                 dr.Cells[7].Value = moda[posicionmayor]; //muestro el arreglo "moda" con la posicion donde esta el numero repetido
             }
-
         }
     }
 }

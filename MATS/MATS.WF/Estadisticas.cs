@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace MATS.WF
 {
@@ -95,7 +96,7 @@ namespace MATS.WF
                 }
             }
             dgv2.Rows.Clear();
-            dgv2.Rows.Add(new Object[] { "Promedio", res, res2, res3, res4, res5});
+            dgv2.Rows.Add(new Object[] { "Promedio", res, res2, res3, res4, res5 });
         }
 
 
@@ -167,6 +168,53 @@ namespace MATS.WF
                     }
                 }
                 dr.Cells[7].Value = moda[posicionmayor]; //muestro el arreglo "moda" con la posicion donde esta el numero repetido
+            }
+        }
+
+        private void Proporcion_Click(object sender, EventArgs e)
+        {
+            int libre = 0;
+            int regular = 0;
+            int promocionado = 0;
+
+            foreach (DataGridViewRow fila in dgv.Rows)
+            {
+                if (Convert.ToDecimal(fila.Cells[5].Value.ToString()) <= 4)
+                {
+                    libre++;
+                }
+                if (Convert.ToDecimal(fila.Cells[5].Value.ToString()) > 4 &&
+                    Convert.ToDecimal(fila.Cells[5].Value.ToString()) < 7)
+                {
+                    regular++;
+                }
+                if (Convert.ToDecimal(fila.Cells[5].Value.ToString()) >= 7)
+                {
+                    promocionado++;
+                }
+            }
+
+            decimal total = Convert.ToDecimal(txtAlum.Text);
+            decimal p_prom = Convert.ToDecimal(promocionado / total) * 100;
+            decimal p_reg = Convert.ToDecimal(regular / total) * 100;
+            decimal p_libre = Convert.ToDecimal(libre / total) * 100;
+
+            lbl_proporcion.Text = "Proporción de alumnos por nota" + "\n\r" +
+                "Promocionados: " + promocionado + " = " + p_prom + "% \n\r" +
+                    "Regulares: " + regular + " = " + p_reg + "% \n\r" +
+                   "Libres: " + libre + " = " + p_libre + "% \n\r";
+
+            grafico.Series.Clear();
+            grafico.Series.Add("Proporcion").ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+
+            String[] serie = { "libre", "regular", "promocionado" };
+            int[] cantidad = { libre, regular, promocionado };
+
+            grafico.Palette = ChartColorPalette.BrightPastel;
+
+            for (int i = 0; i < serie.Length; i++)
+            {
+                grafico.Series["Proporcion"].Points.AddXY(serie[i], cantidad[i]);
             }
         }
     }

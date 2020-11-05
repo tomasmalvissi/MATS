@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.Alumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nota1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,8 +54,12 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Promedio2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grafico = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.Proporcion = new System.Windows.Forms.Button();
+            this.lbl_proporcion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grafico)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv
@@ -128,7 +135,7 @@
             // 
             // btnProm
             // 
-            this.btnProm.Location = new System.Drawing.Point(583, 163);
+            this.btnProm.Location = new System.Drawing.Point(599, 120);
             this.btnProm.Name = "btnProm";
             this.btnProm.Size = new System.Drawing.Size(75, 23);
             this.btnProm.TabIndex = 5;
@@ -138,7 +145,7 @@
             // 
             // btnMediana
             // 
-            this.btnMediana.Location = new System.Drawing.Point(583, 251);
+            this.btnMediana.Location = new System.Drawing.Point(716, 120);
             this.btnMediana.Name = "btnMediana";
             this.btnMediana.Size = new System.Drawing.Size(75, 23);
             this.btnMediana.TabIndex = 6;
@@ -148,7 +155,7 @@
             // 
             // btnModa
             // 
-            this.btnModa.Location = new System.Drawing.Point(583, 335);
+            this.btnModa.Location = new System.Drawing.Point(599, 177);
             this.btnModa.Name = "btnModa";
             this.btnModa.Size = new System.Drawing.Size(75, 23);
             this.btnModa.TabIndex = 7;
@@ -231,11 +238,51 @@
             this.Promedio2.HeaderText = "Promedio";
             this.Promedio2.Name = "Promedio2";
             // 
+            // grafico
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.grafico.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.grafico.Legends.Add(legend2);
+            this.grafico.Location = new System.Drawing.Point(561, 286);
+            this.grafico.Name = "grafico";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.grafico.Series.Add(series2);
+            this.grafico.Size = new System.Drawing.Size(271, 185);
+            this.grafico.TabIndex = 13;
+            this.grafico.Text = "chart";
+            // 
+            // Proporcion
+            // 
+            this.Proporcion.Location = new System.Drawing.Point(716, 171);
+            this.Proporcion.Name = "Proporcion";
+            this.Proporcion.Size = new System.Drawing.Size(75, 35);
+            this.Proporcion.TabIndex = 14;
+            this.Proporcion.Text = "Proporcion Aprobados";
+            this.Proporcion.UseVisualStyleBackColor = true;
+            this.Proporcion.Click += new System.EventHandler(this.Proporcion_Click);
+            // 
+            // lbl_proporcion
+            // 
+            this.lbl_proporcion.AutoSize = true;
+            this.lbl_proporcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_proporcion.Location = new System.Drawing.Point(572, 225);
+            this.lbl_proporcion.Name = "lbl_proporcion";
+            this.lbl_proporcion.Size = new System.Drawing.Size(58, 15);
+            this.lbl_proporcion.TabIndex = 15;
+            this.lbl_proporcion.Text = "Alumnos:";
+            // 
             // Estadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 497);
+            this.ClientSize = new System.Drawing.Size(854, 497);
+            this.Controls.Add(this.lbl_proporcion);
+            this.Controls.Add(this.Proporcion);
+            this.Controls.Add(this.grafico);
             this.Controls.Add(this.dgv2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtAlum);
@@ -251,6 +298,7 @@
             this.Text = "Estadisticas";
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grafico)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,6 +329,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Promedio2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart grafico;
+        private System.Windows.Forms.Button Proporcion;
+        private System.Windows.Forms.Label lbl_proporcion;
     }
 }
 

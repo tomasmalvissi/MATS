@@ -47,6 +47,7 @@
             this.Nota4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Promedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mediana = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Moda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,11 +64,12 @@
             this.Nota3,
             this.Nota4,
             this.Promedio,
-            this.Mediana});
-            this.dgv.Location = new System.Drawing.Point(33, 110);
+            this.Mediana,
+            this.Moda});
+            this.dgv.Location = new System.Drawing.Point(12, 110);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv.Size = new System.Drawing.Size(465, 316);
+            this.dgv.Size = new System.Drawing.Size(531, 316);
             this.dgv.TabIndex = 4;
             // 
             // btnConfir
@@ -204,6 +206,11 @@
             this.Mediana.HeaderText = "Mediana";
             this.Mediana.Name = "Mediana";
             // 
+            // Moda
+            // 
+            this.Moda.HeaderText = "Moda";
+            this.Moda.Name = "Moda";
+            // 
             // Estadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,6 +259,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nota4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Promedio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mediana;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Moda;
     }
 }
 

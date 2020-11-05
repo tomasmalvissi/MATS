@@ -43,11 +43,16 @@
             this.btnModa = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAlum = new System.Windows.Forms.TextBox();
-            this.lbl_prom = new System.Windows.Forms.Label();
-            this.lbl_mediana = new System.Windows.Forms.Label();
-            this.lbl_moda = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.dgv2 = new System.Windows.Forms.DataGridView();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Promedio2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv
@@ -68,7 +73,7 @@
             this.dgv.Location = new System.Drawing.Point(12, 110);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv.Size = new System.Drawing.Size(531, 316);
+            this.dgv.Size = new System.Drawing.Size(531, 273);
             this.dgv.TabIndex = 4;
             // 
             // Alumno
@@ -123,7 +128,7 @@
             // 
             // btnProm
             // 
-            this.btnProm.Location = new System.Drawing.Point(549, 141);
+            this.btnProm.Location = new System.Drawing.Point(583, 163);
             this.btnProm.Name = "btnProm";
             this.btnProm.Size = new System.Drawing.Size(75, 23);
             this.btnProm.TabIndex = 5;
@@ -133,7 +138,7 @@
             // 
             // btnMediana
             // 
-            this.btnMediana.Location = new System.Drawing.Point(549, 229);
+            this.btnMediana.Location = new System.Drawing.Point(583, 251);
             this.btnMediana.Name = "btnMediana";
             this.btnMediana.Size = new System.Drawing.Size(75, 23);
             this.btnMediana.TabIndex = 6;
@@ -143,7 +148,7 @@
             // 
             // btnModa
             // 
-            this.btnModa.Location = new System.Drawing.Point(549, 313);
+            this.btnModa.Location = new System.Drawing.Point(583, 335);
             this.btnModa.Name = "btnModa";
             this.btnModa.Size = new System.Drawing.Size(75, 23);
             this.btnModa.TabIndex = 7;
@@ -167,33 +172,6 @@
             this.txtAlum.Size = new System.Drawing.Size(100, 20);
             this.txtAlum.TabIndex = 1;
             // 
-            // lbl_prom
-            // 
-            this.lbl_prom.AutoSize = true;
-            this.lbl_prom.Location = new System.Drawing.Point(559, 179);
-            this.lbl_prom.Name = "lbl_prom";
-            this.lbl_prom.Size = new System.Drawing.Size(51, 13);
-            this.lbl_prom.TabIndex = 8;
-            this.lbl_prom.Text = "Promedio";
-            // 
-            // lbl_mediana
-            // 
-            this.lbl_mediana.AutoSize = true;
-            this.lbl_mediana.Location = new System.Drawing.Point(559, 267);
-            this.lbl_mediana.Name = "lbl_mediana";
-            this.lbl_mediana.Size = new System.Drawing.Size(48, 13);
-            this.lbl_mediana.TabIndex = 9;
-            this.lbl_mediana.Text = "Mediana";
-            // 
-            // lbl_moda
-            // 
-            this.lbl_moda.AutoSize = true;
-            this.lbl_moda.Location = new System.Drawing.Point(573, 348);
-            this.lbl_moda.Name = "lbl_moda";
-            this.lbl_moda.Size = new System.Drawing.Size(34, 13);
-            this.lbl_moda.TabIndex = 10;
-            this.lbl_moda.Text = "Moda";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -204,15 +182,62 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "PROMEDIO, MEDIANA y MODA";
             // 
+            // dgv2
+            // 
+            this.dgv2.AllowUserToAddRows = false;
+            this.dgv2.AllowUserToDeleteRows = false;
+            this.dgv2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Total,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.Promedio2});
+            this.dgv2.Location = new System.Drawing.Point(12, 399);
+            this.dgv2.Name = "dgv2";
+            this.dgv2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgv2.Size = new System.Drawing.Size(531, 86);
+            this.dgv2.TabIndex = 12;
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nota1";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Nota2";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Nota3";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Nota4";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // Promedio2
+            // 
+            this.Promedio2.HeaderText = "Promedio";
+            this.Promedio2.Name = "Promedio2";
+            // 
             // Estadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 436);
+            this.ClientSize = new System.Drawing.Size(695, 497);
+            this.Controls.Add(this.dgv2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lbl_moda);
-            this.Controls.Add(this.lbl_mediana);
-            this.Controls.Add(this.lbl_prom);
             this.Controls.Add(this.txtAlum);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnModa);
@@ -225,6 +250,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estadisticas";
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,9 +265,6 @@
         private System.Windows.Forms.Button btnModa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAlum;
-        private System.Windows.Forms.Label lbl_prom;
-        private System.Windows.Forms.Label lbl_mediana;
-        private System.Windows.Forms.Label lbl_moda;
         private System.Windows.Forms.DataGridViewTextBoxColumn Alumno;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nota1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nota2;
@@ -251,6 +274,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Mediana;
         private System.Windows.Forms.DataGridViewTextBoxColumn Moda;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgv2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Promedio2;
     }
 }
 

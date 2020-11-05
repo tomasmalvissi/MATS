@@ -29,7 +29,7 @@ namespace MATS.WF
             CtorTabla();
         }
 
-        private void btnProm_Click(object sender, EventArgs e)
+        public void PromedioAlumno()
         {
             foreach (DataGridViewRow dr in dgv.Rows)
             {
@@ -40,6 +40,69 @@ namespace MATS.WF
 
                 dr.Cells[5].Value = ((v1 + v2 + v3 + v4) / 4);
             }
+        }
+        public void PromedioNota()
+        {
+            decimal sumatoria = 0;
+            int contador = 0;
+            int bandera = 0;
+
+            decimal res = 0;
+            decimal res2 = 0;
+            decimal res3 = 0;
+            decimal res4 = 0;
+            decimal res5 = 0;
+
+            for (int i = 1; i < 6; i++)
+            {
+                foreach (DataGridViewRow fila in dgv.Rows)
+                {
+                    sumatoria += Convert.ToDecimal(fila.Cells[i].Value.ToString());
+                    contador++;
+                }
+                switch (bandera)
+                {
+                    case 0:
+                        res = sumatoria / contador;
+                        bandera++;
+                        sumatoria = 0;
+                        contador = 0;
+                        break;
+                    case 1:
+                        res2 = sumatoria / contador;
+                        bandera++;
+                        sumatoria = 0;
+                        contador = 0;
+                        break;
+                    case 2:
+                        res3 = sumatoria / contador;
+                        bandera++;
+                        sumatoria = 0;
+                        contador = 0;
+                        break;
+                    case 3:
+                        res4 = sumatoria / contador;
+                        bandera++;
+                        sumatoria = 0;
+                        contador = 0;
+                        break;
+                    case 4:
+                        res5 = sumatoria / contador;
+                        bandera++;
+                        sumatoria = 0;
+                        contador = 0;
+                        break;
+                }
+            }
+            dgv2.Rows.Clear();
+            dgv2.Rows.Add(new Object[] { "Promedio", res, res2, res3, res4, res5});
+        }
+
+
+        private void btnProm_Click(object sender, EventArgs e)
+        {
+            PromedioAlumno();
+            PromedioNota();
         }
         private void btnMediana_Click(object sender, EventArgs e)
         {

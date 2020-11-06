@@ -21,8 +21,8 @@ namespace MATS.WF
 
         public void CtorTabla()
         {
-            int Ax = Convert.ToInt32(txtAlum.Text);
-            dgv.RowCount = Ax;
+            int filas = Convert.ToInt32(txtAlum.Text);
+            dgv.RowCount = filas;
         }
 
         private void btnConfir_Click(object sender, EventArgs e)

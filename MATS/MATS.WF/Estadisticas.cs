@@ -27,10 +27,16 @@ namespace MATS.WF
 
         private void btnConfir_Click(object sender, EventArgs e)
         {
-            CtorTabla();
+            if (String.IsNullOrWhiteSpace(txtAlum.Text))
+            {
+                MessageBox.Show("Por favor defina la cantidad de alumnos");
+            }
+            else
+            {
+                CtorTabla();
+            }
         }
-
-        public void PromedioAlumno()
+        private void PromedioAlumno()
         {
             foreach (DataGridViewRow dr in dgv.Rows)
             {
@@ -42,7 +48,7 @@ namespace MATS.WF
                 dr.Cells[5].Value = ((v1 + v2 + v3 + v4) / 4);
             }
         }
-        public void PromedioNota()
+        private void PromedioNota()
         {
             decimal sumatoria = 0;
             int contador = 0;

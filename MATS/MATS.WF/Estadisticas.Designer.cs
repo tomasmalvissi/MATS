@@ -32,14 +32,6 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.Alumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nota1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nota2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nota3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nota4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Promedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mediana = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Moda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnConfir = new System.Windows.Forms.Button();
             this.btnProm = new System.Windows.Forms.Button();
             this.btnMediana = new System.Windows.Forms.Button();
@@ -57,6 +49,14 @@
             this.grafico = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Proporcion = new System.Windows.Forms.Button();
             this.lbl_proporcion = new System.Windows.Forms.Label();
+            this.Alumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nota1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nota2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nota3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nota4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Promedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mediana = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Moda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grafico)).BeginInit();
@@ -82,46 +82,6 @@
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgv.Size = new System.Drawing.Size(531, 273);
             this.dgv.TabIndex = 4;
-            // 
-            // Alumno
-            // 
-            this.Alumno.HeaderText = "Alumno";
-            this.Alumno.Name = "Alumno";
-            // 
-            // Nota1
-            // 
-            this.Nota1.HeaderText = "Nota1";
-            this.Nota1.Name = "Nota1";
-            // 
-            // Nota2
-            // 
-            this.Nota2.HeaderText = "Nota2";
-            this.Nota2.Name = "Nota2";
-            // 
-            // Nota3
-            // 
-            this.Nota3.HeaderText = "Nota3";
-            this.Nota3.Name = "Nota3";
-            // 
-            // Nota4
-            // 
-            this.Nota4.HeaderText = "Nota4";
-            this.Nota4.Name = "Nota4";
-            // 
-            // Promedio
-            // 
-            this.Promedio.HeaderText = "Promedio";
-            this.Promedio.Name = "Promedio";
-            // 
-            // Mediana
-            // 
-            this.Mediana.HeaderText = "Mediana";
-            this.Mediana.Name = "Mediana";
-            // 
-            // Moda
-            // 
-            this.Moda.HeaderText = "Moda";
-            this.Moda.Name = "Moda";
             // 
             // btnConfir
             // 
@@ -204,6 +164,7 @@
             this.Promedio2});
             this.dgv2.Location = new System.Drawing.Point(12, 399);
             this.dgv2.Name = "dgv2";
+            this.dgv2.ReadOnly = true;
             this.dgv2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgv2.Size = new System.Drawing.Size(531, 48);
             this.dgv2.TabIndex = 12;
@@ -212,31 +173,37 @@
             // 
             this.Total.HeaderText = "Total";
             this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.HeaderText = "Nota1";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "Nota2";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.HeaderText = "Nota3";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.HeaderText = "Nota4";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // Promedio2
             // 
             this.Promedio2.HeaderText = "Promedio";
             this.Promedio2.Name = "Promedio2";
+            this.Promedio2.ReadOnly = true;
             // 
             // grafico
             // 
@@ -274,6 +241,49 @@
             this.lbl_proporcion.Size = new System.Drawing.Size(58, 15);
             this.lbl_proporcion.TabIndex = 15;
             this.lbl_proporcion.Text = "Alumnos:";
+            // 
+            // Alumno
+            // 
+            this.Alumno.HeaderText = "Alumno";
+            this.Alumno.Name = "Alumno";
+            // 
+            // Nota1
+            // 
+            this.Nota1.HeaderText = "Nota1";
+            this.Nota1.Name = "Nota1";
+            // 
+            // Nota2
+            // 
+            this.Nota2.HeaderText = "Nota2";
+            this.Nota2.Name = "Nota2";
+            // 
+            // Nota3
+            // 
+            this.Nota3.HeaderText = "Nota3";
+            this.Nota3.Name = "Nota3";
+            // 
+            // Nota4
+            // 
+            this.Nota4.HeaderText = "Nota4";
+            this.Nota4.Name = "Nota4";
+            // 
+            // Promedio
+            // 
+            this.Promedio.HeaderText = "Promedio";
+            this.Promedio.Name = "Promedio";
+            this.Promedio.ReadOnly = true;
+            // 
+            // Mediana
+            // 
+            this.Mediana.HeaderText = "Mediana";
+            this.Mediana.Name = "Mediana";
+            this.Mediana.ReadOnly = true;
+            // 
+            // Moda
+            // 
+            this.Moda.HeaderText = "Moda";
+            this.Moda.Name = "Moda";
+            this.Moda.ReadOnly = true;
             // 
             // Estadisticas
             // 
@@ -313,14 +323,6 @@
         private System.Windows.Forms.Button btnModa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAlum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Alumno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nota1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nota2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nota3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nota4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Promedio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mediana;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Moda;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgv2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
@@ -332,6 +334,14 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart grafico;
         private System.Windows.Forms.Button Proporcion;
         private System.Windows.Forms.Label lbl_proporcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Alumno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nota1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nota2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nota3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nota4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Promedio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mediana;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Moda;
     }
 }
 
